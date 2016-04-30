@@ -1,0 +1,62 @@
+<!DOCTYPE html><html>
+<!
+ * Copyright (c) 2016 IBM Corporation and other Contributors.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *   Colin Paice - Initial Contribution
+ *   Sharuff Morsa - original code
+ *   Emir Garza  - original code  
+ >
+<body>
+<h1>MQ Configuration difference tool MQConfigDiff</h1>
+<p>This tool provides rexx execs to take output from CSQUTIL or runmqsc and create HTML pages so you can compare and contrast the 
+differences on MQ object and their attributes.
+<p>You will need rexx installed on your machine.  These rexx programs have been tested in Redhat(R) V7 and Windows(R) V10.
+<p>Differences are highlighted.  You can display all attributes, or just different attributes.  
+The example below is a cut down version showing just the queue manager and a few local queues.
+<h1> Data processed on 16 Apr 2016 10:31:16</h1>
+<TABLE BORDER=4 CELLSPACING=4 CELLPADDING=4>
+<TR>
+<TD>Summary of objects</td><td>all attributes</td><td>differences</td>
+</TR>
+<TR>
+<TD><a href="./QMGR.html">QMGR</a></td>
+<TD><a href="./QMGR_detail.html">All details</a></td>
+<TD><a href="./QMGR_difference.html">Differences</a></td>
+</TR>
+<TR>
+<TD><a href="./QLOCAL.html">QLOCAL</a></td>
+<TD><a href="./QLOCAL_detail.html">All details</a></td>
+<TD><a href="./QLOCAL_difference.html">Differences</a></td>
+</TR>
+</TABLE>
+<p>You can use this to compare queue managers and see which attributes are different; or compare attributes from one queue manager at 
+different points in time to see what has changed between the two times.
+<p>If you click on the links, the columns have names 
+<ul>
+<li><i>MQP1.out.)MQP1</i>, This mean the queue manager )MQP1 came from file MQP1.out 
+<li><i>n7.defs.txt.out.colin</i>, this means queue manager colin from the file 7.defs.txt.out.
+</ul>
+This allows you to pass in files like MQP1.March20.out and MQP1.March30.out and see the differences.
+<h1>Syntax</h1>
+<h2>CSQUTIL</h2>
+<i>rexx  mqzos.rexx infile < outfile > </i>
+<p>
+where infile might be MQP1.defs and outfile will default to infile.out
+<h2>runmqsc</h2>
+<i>rexx  mqdist.rexx infile < outfile > </i>
+<p>
+where infile might be default.defs and outfile will default to infile.out
+<h2>Compare the files</h2>
+The above processing converts the input files to one keyword value pair per line.
+to create the html
+<p><i>rexx to html.rexx output1 output2 ...</i>
+where the output1 and output2 etc are the output files from the mqzos and mqdist commands.
+<p>Then browse the aStart.html file in your directory.
+<p>The execs will erase any files before recreating them, so rename, or take a copy of the files you want to keep.
+</body>

@@ -1,9 +1,22 @@
-mq-rexx-utils
+# mqConfigDiff
+MQ Configuration difference tool MQConfigDiff
+
+
+Description
+===========
+This tool provides rexx execs to take output from CSQUTIL or runmqsc and create HTML pages so you can compare 
+and contrast the differences on MQ object and their attributes.
+Differences are highlighted.  You can display all attributes, or just different attributes.
+
+Author PAICE@UK.IBM.COM
+
+Documentation
 =============
+Open the README.html in a web browser to show an example of the output
 
-Utilities for IBM MQ, written to use REXX interfaces.
-
-First program is to compare queue manager definitions and generate a report showing differences.
+History
+=======
+April 2016 - Initial release
 
 Pull requests
 =============
