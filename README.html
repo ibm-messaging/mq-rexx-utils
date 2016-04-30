@@ -43,6 +43,18 @@ different points in time to see what has changed between the two times.
 <li><i>n7.defs.txt.out.colin</i>, this means queue manager colin from the file 7.defs.txt.out.
 </ul>
 This allows you to pass in files like MQP1.March20.out and MQP1.March30.out and see the differences.
+You need to display the information of interest for example one or more of
+<ul><li>DIS QMGR ALL
+<li>DIS Q(*) ALL
+<li>DIS CHL(*) ALL
+<li>DIS NAMELIST(*) ALL
+<li>DIS PROCESS(*) ALL
+<li>DIS STGCLASS(*) ALL
+<li>DIS SUB(*) ALL
+<li>DIS TOPIC(*) ALL
+<li>DIS CLUSQMGR(*) ALL
+<li>DIS CHLAUTH(*) ALL
+</ul>
 <h1>Syntax</h1>
 <h2>CSQUTIL</h2>
 <i>rexx  mqzos.rexx infile < outfile > </i>
